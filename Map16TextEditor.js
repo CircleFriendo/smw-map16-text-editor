@@ -15,9 +15,10 @@ function redrawPreview() {
     var y = 0;
     
     var message = document.getElementById('message').value;
+    var gfx = parseInt(document.getElementById('gfx').value);
     
     context.clearRect(0, 0, previewWidth, previewHeight);
-    data = [...Array(32)].map(e => Array(32).fill(0x2DF));
+    data = [...Array(32)].map(e => Array(32).fill(gfx + 0x5F));
     
     for (var i=0; i<message.length; i++) {
         var chr = message[i];
@@ -30,7 +31,7 @@ function redrawPreview() {
         if (chr in alphabet) {
             if (x<32) {
                 placeTile(x,y,alphabet[chr]);
-                data[x][y] = 0x280 + alphabet[chr];
+                data[x][y] = gfx + alphabet[chr];
             }
             x++;
         }
@@ -181,4 +182,5 @@ var alphabet = {
     
     ' ': 95
     
+
 }
