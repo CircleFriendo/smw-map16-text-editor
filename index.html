@@ -13,6 +13,14 @@
 <canvas id='preview' width='512' height='512'></canvas>
 
 <textarea id='message' rows="32" cols="32" oninput="updateText();"></textarea><br>
+GFX File: <select id='gfx'>
+  <option value="0x000">FG1</option>
+  <option value="0x080">FG2</option>
+  <option value="0x100">BG1</option>
+  <option value="0x180">FG3</option>
+  <option value="0x200">BG2</option>
+  <option value="0x280">BG3</option>
+</select><br>
 Map16 page: <input id='page' size='2' value='02' onchange='updatePage()'><br>
 <button onclick="exportText();">Export</button><br>
 <a href="https://circlefriendo.github.io/smw-map16-text-editor/ExGFXFF.bin">ExGFX File</a>
@@ -38,3 +46,4 @@ loadText();
 </script>
 </body>
 </html>
+
